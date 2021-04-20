@@ -8,6 +8,7 @@
 #include <string>
 #include <vector>
 #include <unordered_map>
+#include <sstream>
 
 #include <fasttext/fasttext.h>
 #include <rocksdb/db.h>
@@ -22,7 +23,9 @@ namespace recall {
         EmbeddingRecall(std::string fasttext_filepath, std::string faiss_filepath,
                         std::string rocksdb_filepath);
 
-        void search_query(std::vector<std::string> datas, int k, int nprobe);
+        bool query_vector(std::vector<std::string> querys);
+
+        bool search_neighbor(std::vector<fasttext::Vector> vectors);
 
 
     private:

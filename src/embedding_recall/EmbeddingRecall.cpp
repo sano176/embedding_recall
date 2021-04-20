@@ -20,6 +20,27 @@ namespace recall {
         this->_db.reset(db);
 
     }
+
+    bool EmbeddingRecall::query_vector(std::vector<std::string> querys,) {
+        std::vector<fasttext::Vector> vectors;
+        vectors.data();
+        vectors.resize(querys.size());
+
+        for (int i = 0; i < querys.size(); i++) {
+            fasttext::Vector vector(100);
+            std::stringstream ss;
+            ss.clear();
+            ss << querys[i];
+            this->_fasttext->getSentenceVector(ss, vector);
+            vectors[i] = vector;
+        }
+    }
+
+    bool EmbeddingRecall::search_neighbor(std::vector<fasttext::Vector> vectors) {
+        std::vector<std::vector<int>> t;
+        std::vector<int> *series = t.data();
+        this->_faiss->search()
+    }
 }
 
 
