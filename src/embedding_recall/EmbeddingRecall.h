@@ -23,10 +23,11 @@ namespace recall {
         EmbeddingRecall(std::string fasttext_filepath, std::string faiss_filepath,
                         std::string rocksdb_filepath);
 
-        bool query_vector(std::vector<std::string> querys);
+        bool query_vector(const std::vector<std::string> &querys, float *datas, int column);
 
-        bool search_neighbor(std::vector<fasttext::Vector> vectors);
+        bool search_neighbor(int count, float *data, int k, float *distance, long long *index);
 
+        bool forward_index(int count, int k, float *distance, long long *index);
 
     private:
         std::shared_ptr<fasttext::FastText> _fasttext;
