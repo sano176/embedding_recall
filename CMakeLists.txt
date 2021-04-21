@@ -11,7 +11,7 @@ INCLUDE_DIRECTORIES(
         "/usr/local/Cellar/fasttext/0.9.2/include"
         "/usr/local/Cellar/faiss/1.6.3/include"
         "/usr/local/Cellar/rocksdb/6.11.4/include"
-        "/usr/local/Cellar/rapidjson/1.1.0/include")
+        "/usr/local/Cellar/jsoncpp/1.9.4_1/include")
 INCLUDE_DIRECTORIES("src/embedding_recall")
 # 其他目录的文件
 ## embedding_recall的文件

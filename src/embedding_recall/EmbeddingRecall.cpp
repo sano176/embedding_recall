@@ -42,10 +42,12 @@ namespace recall {
     }
 
     bool EmbeddingRecall::forward_index(int count, int k, float *distance, long long int *index) {
+
         float dis = 0.0f;
         long long int idx = 0;
         for (int i = 0; i < count; i++) {
             for (int j = 0; j < k; j++) {
+
                 dis = *(distance + i * k + j);
                 idx = *(index + i * k + j);
             }

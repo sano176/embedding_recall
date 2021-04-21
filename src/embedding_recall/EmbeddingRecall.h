@@ -10,6 +10,7 @@
 #include <unordered_map>
 #include <sstream>
 
+#include <json/json.h>
 #include <fasttext/fasttext.h>
 #include <rocksdb/db.h>
 #include <faiss/Index.h>
